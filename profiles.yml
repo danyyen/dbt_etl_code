@@ -1,0 +1,37 @@
+Netflix:
+  target: default 
+  outputs:
+    default: 
+      type: snowflake
+      account: EXDSXDU-CV04446
+      user: danyyen
+      password: Production66@!
+      role: ACCOUNTADMIN
+      database: DBT_PROJECT_DB
+      warehouse: COMPUTE_WH
+      schema: DBT_RAW
+      threads: 1
+      client_session_keep_alive: False
+    dev:
+      type: snowflake
+      account: EXDSXDU-CV04446
+      user: danyyen
+      password: Production66@!
+      role: ACCOUNTADMIN
+      database: DBT_PROJECT_DB
+      warehouse: COMPUTE_WH
+      schema: DBT_TRANSFORM
+      threads: 1
+      client_session_keep_alive: False
+    prod:
+      type: snowflake
+      account: EXDSXDU-CV04446
+      user: danyyen
+      password: Production66@!
+      role: ACCOUNTADMIN
+      database: DBT_PROJECT_DB
+      warehouse: COMPUTE_WH
+      schema: DBT_PROD
+      threads: 1
+      client_session_keep_alive: False
+
