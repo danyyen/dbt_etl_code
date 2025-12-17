@@ -1,12 +1,8 @@
 {{ config(
-    pre_hook="ALTER SESSION SET QUOTED_IDENTIFIERS_IGNORE_CASE = true"
-) }}
-
-{{ config(
+    pre_hook="ALTER SESSION SET QUOTED_IDENTIFIERS_IGNORE_CASE = true",
     tags=[var('TAG_DIMENSION')]
 ) }}
 
-SELECT 
-* 
-FROM DBT_PROJECT_DB.DBT_RAW.CREDITS
-WHERE ROLE IN ('ACTOR','DIRECTOR')
+SELECT *
+FROM {{ source('netflix', 'CREDITS') }}
+WHERE ROLE IN ('ACTOR', 'DIRECTOR')
